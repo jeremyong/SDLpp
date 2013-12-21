@@ -1,10 +1,12 @@
 #pragma once
 
-#include "Window.h"
+#include "Clock.h"
+#include "Duration.h"
 #include "Renderer.h"
+#include "Sprite.h"
 #include "Surface.h"
 #include "Texture.h"
-#include "Sprite.h"
+#include "Window.h"
 
 namespace sdl {
 void Init() {
