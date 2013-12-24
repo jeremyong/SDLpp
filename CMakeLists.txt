@@ -13,7 +13,8 @@ file(GLOB sources RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}
 file(GLOB headers RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}
      include/*.h)
 
-add_library(SDLpp STATIC ${headers} ${sources})
+# add_library(SDLpp STATIC ${headers} ${sources})
+add_library(SDLpp SHARED ${headers} ${sources})
 
 if(APPLE)
     find_library(SDL2 SDL2)

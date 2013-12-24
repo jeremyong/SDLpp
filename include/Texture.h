@@ -2,6 +2,7 @@
 #include <SDL2/SDL.h>
 #include <tuple>
 #include "Surface.h"
+#include "Vector2.h"
 #include <iostream>
 
 namespace sdl {
@@ -30,6 +31,6 @@ public:
     int GetWidth() const;
     int GetHeight() const;
     SDL_Renderer *GetRenderer() const;
-    std::tuple<int, int> GetDimensions() const;
+    Vector2i GetSize() const;
 };
 }

@@ -1,6 +1,8 @@
 #include "Renderer.h"
+#include "Sprite.h"
 #include "Surface.h"
 #include "Texture.h"
+#include "Vector2f.h"
 
 namespace sdl {
 Texture *Renderer::CreateTexture(const Surface &surface) {
@@ -10,11 +12,15 @@ Texture *Renderer::CreateTexture(const Surface &surface) {
     return ret->get();
 }
 
-void Renderer::Clear() {
+void Renderer::Clear() const {
     SDL_RenderClear(_ren);
 }
 
-void Renderer::Present() {
+void Renderer::Draw(Sprite &sprite) const {
+    sprite.Draw(_view);
+}
+
+void Renderer::Present() const {
     SDL_RenderPresent(_ren);
 }
 }

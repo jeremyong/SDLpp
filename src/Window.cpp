@@ -12,4 +12,10 @@ Renderer *Window::CreateRenderer(const uint32_t flags) {
     std::tie(ret, std::ignore) = _renderers.insert(std::move(tmp));
     return ret->get();
 }
+
+Vector2i Window::GetSize() const {
+    Vector2i ret;
+    SDL_GetWindowSize(_win, &ret.x, &ret.y);
+    return ret;
+}
 }

@@ -3,15 +3,19 @@
 #include "Window.h"
 #include <stdint.h>
 #include "Texture.h"
+#include "View.h"
 #include <set>
 
 namespace sdl {
 class Surface;
+class Vector2f;
+class Sprite;
 class Renderer {
 private:
     typedef std::unique_ptr<Texture> texture_ptr;
     SDL_Renderer *_ren;
     std::set<texture_ptr> _textures;
+    View _view;
 public:
     Renderer(SDL_Window *win, const uint32_t flags)
         : _ren(nullptr) {
@@ -29,7 +33,10 @@ public:
     }
 
     Texture *CreateTexture(const Surface &surface);
-    void Clear();
-    void Present();
+    void Clear() const;
+    void Draw(Sprite &sprite) const;
+    void Present() const;
+
+    View *GetView() { return &_view; }
 };
 }

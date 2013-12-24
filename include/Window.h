@@ -5,6 +5,7 @@
 #include <memory>
 #include <set>
 #include <functional>
+#include "Vector2.h"
 
 namespace sdl {
 class Renderer;
@@ -45,6 +46,8 @@ public:
     ~Window() {
         if (_win != nullptr) SDL_DestroyWindow(_win);
     }
+
+    Vector2i GetSize() const;
 
     Renderer *CreateRenderer();
     Renderer *CreateRenderer(const uint32_t flags);

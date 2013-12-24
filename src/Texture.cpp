@@ -1,4 +1,5 @@
 #include "Texture.h"
+#include "Vector2.h"
 
 namespace sdl {
 int Texture::GetWidth() const {
@@ -13,10 +14,10 @@ int Texture::GetHeight() const {
     return ret;
 }
 
-std::tuple<int, int> Texture::GetDimensions() const {
-    int w, h;
-    SDL_QueryTexture(_tex, nullptr, nullptr, &w, &h);
-    return std::make_tuple(w, h);
+Vector2i Texture::GetSize() const {
+    Vector2i ret;
+    SDL_QueryTexture(_tex, nullptr, nullptr, &ret.x, &ret.y);
+    return ret;
 }
 
 SDL_Renderer *Texture::GetRenderer() const {

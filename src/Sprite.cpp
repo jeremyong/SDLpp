@@ -1,19 +1,30 @@
 #include "Sprite.h"
+#include "View.h"
 #include <tuple>
+#include <iostream>
 
 namespace sdl {
 Sprite::Sprite(const Texture &tex)
     : _texture(tex) {
-    int w, h;
-    std::tie(w, h) = tex.GetDimensions();
-    _dest.w = w;
-    _dest.h = h;
-    _dest.x = 0;
-    _dest.y = 0;
+    Vector2i size = tex.GetSize();
+    _dest.w = size.x;
+    _dest.h = size.y;
     _src = _dest;
+    _src.x = 0;
+    _src.y = 0;
 }
 
-void Sprite::Draw() const {
+Sprite::Sprite(const Texture &tex, const Rect &src, const Vector2f &origin)
+    : _texture(tex), _src(src), _origin(origin) {
+    Vector2i size = tex.GetSize();
+    _dest.w = size.x;
+    _dest.h = size.y;
+}
+
+void Sprite::Draw(const View &view) {
+    const Vector2i dest = view.WorldToRaster(_position);
+    _dest.x = dest.x;
+    _dest.y = dest.y;
     SDL_RenderCopy(_texture.GetRenderer(), _texture._tex, &_src, &_dest);
 }
 }
