@@ -24,3 +24,7 @@ if(APPLE)
 elseif(UNIX)
     target_link_libraries(SDLpp SDL2 SDL2_ttf SDL2_image)
 endif(APPLE)
+
+
+add_executable(window ${CMAKE_CURRENT_SOURCE_DIR}/examples/window/Main.cpp)
+target_link_libraries(window SDLpp)
