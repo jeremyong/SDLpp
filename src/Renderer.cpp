@@ -6,6 +6,13 @@
 #include "Vector2f.h"
 
 namespace sdl {
+Texture *Renderer::CreateTexture(const std::string &file) {
+    texture_ptr tmp{new Texture(_ren, file)};
+    std::set<texture_ptr>::iterator ret;
+    std::tie(ret, std::ignore) = _textures.insert(std::move(tmp));
+    return ret->get();
+}
+
 Texture *Renderer::CreateTexture(const Surface &surface) {
     texture_ptr tmp{new Texture(_ren, surface)};
     std::set<texture_ptr>::iterator ret;

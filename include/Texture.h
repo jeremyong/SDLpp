@@ -1,9 +1,10 @@
 #pragma once
 #include <SDL2/SDL.h>
-#include <tuple>
 #include "Surface.h"
 #include "Vector2.h"
-#include <iostream>
+#include "Util.h"
+
+#include <tuple>
 
 namespace sdl {
 class Sprite;
@@ -14,11 +15,20 @@ private:
     SDL_Texture *_tex;
     SDL_Renderer *_ren;
 public:
+    Texture(SDL_Renderer *ren, const std::string file)
+        : _tex(nullptr), _ren(ren) {
+        Surface s{file};
+        _tex = SDL_CreateTextureFromSurface(ren, s._surface);
+        if (_tex == nullptr) {
+            Throw();
+        }
+    }
+
     Texture(SDL_Renderer *ren, const Surface &surf)
         : _tex(nullptr), _ren(ren) {
         _tex = SDL_CreateTextureFromSurface(ren, surf._surface);
         if (_tex == nullptr) {
-            throw SDL_GetError();
+            Throw();
         }
     }
 

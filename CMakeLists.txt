@@ -31,3 +31,6 @@ target_link_libraries(window SDLpp)
 
 add_executable(text ${CMAKE_CURRENT_SOURCE_DIR}/examples/text/Main.cpp)
 target_link_libraries(text SDLpp)
+
+add_executable(sprite ${CMAKE_CURRENT_SOURCE_DIR}/examples/sprite/Main.cpp)
+target_link_libraries(sprite SDLpp)

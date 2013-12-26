@@ -6,6 +6,7 @@
 #include <set>
 #include <functional>
 #include "Vector2.h"
+#include "Util.h"
 
 namespace sdl {
 class Renderer;
@@ -36,7 +37,7 @@ public:
                                 width, height,
                                 flags);
         if (_win == nullptr) {
-            throw SDL_GetError();
+            Throw();
         }
     }
 

@@ -4,6 +4,7 @@
 #include <stdint.h>
 #include "Texture.h"
 #include "View.h"
+#include "Util.h"
 #include <set>
 
 namespace sdl {
@@ -22,7 +23,7 @@ public:
         : _ren(nullptr) {
         _ren = SDL_CreateRenderer(win, -1, flags);
         if (_ren == nullptr) {
-            throw SDL_GetError();
+            Throw();
         }
     }
 
@@ -34,6 +35,8 @@ public:
     }
 
     Texture *CreateTexture(const Surface &surface);
+    Texture *CreateTexture(const std::string &file);
+
     void Clear() const;
     void Draw(Sprite &sprite) const;
     void Draw(Text &text) const;

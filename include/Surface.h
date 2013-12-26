@@ -1,6 +1,8 @@
 #pragma once
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
 #include <string>
+#include "Util.h"
 
 namespace sdl {
 class Texture;
@@ -10,10 +12,10 @@ private:
     SDL_Surface *_surface;
 public:
     Surface () : _surface(nullptr) {}
-    void LoadBMP(const std::string &image) {
-        _surface = SDL_LoadBMP(image.c_str());
+    Surface(const std::string &file) {
+        _surface = IMG_Load(file.c_str());
         if (_surface == nullptr) {
-            throw SDL_GetError();
+            Throw();
         }
     }
 

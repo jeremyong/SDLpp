@@ -11,4 +11,9 @@ inline std::ostream &operator<<(std::ostream &os, const Rect &rect) {
        << rect.h << std::endl;
     return os;
 }
+
+inline void Throw() {
+    std::cout << SDL_GetError() << std::endl;
+    throw 0;
+}
 }
