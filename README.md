@@ -26,4 +26,11 @@ make
 ```
 
 This will create an `libSDLpp.so` library that your application can
-link against. Remember to add the `include` directory as well.
+link against. Remember to add the `include` directory as well. In
+addition, this will build all the examples in the `examples`
+directory.
+
+## Usage
+
+Please refer to individual examples in the `examples` directory for
+usage instructions.
