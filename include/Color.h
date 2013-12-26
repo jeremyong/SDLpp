@@ -1,0 +1,26 @@
+#pragma once
+#include <SDL2/SDL.h>
+
+namespace sdl {
+class Color {
+private:
+    SDL_Color _color;
+
+public:
+    Color(const int r, const int g, const int b) : Color(r, g, b, 255) {}
+    Color(const int r, const int g, const int b, const int a) {
+        _color.r = r;
+        _color.g = g;
+        _color.b = b;
+        _color.a = a;
+    }
+
+    SDL_Color GetColor() const { return _color; }
+};
+namespace Colors {
+static Color White{255, 255, 255, 255};
+static Color Red{255, 0, 0, 255};
+static Color Green{0, 255, 0, 255};
+static Color Blue{0, 0, 255, 255};
+}
+}

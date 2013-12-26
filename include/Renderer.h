@@ -7,9 +7,10 @@
 #include <set>
 
 namespace sdl {
-class Surface;
-class Vector2f;
 class Sprite;
+class Surface;
+class Text;
+class Vector2f;
 class Renderer {
 private:
     typedef std::unique_ptr<Texture> texture_ptr;
@@ -35,6 +36,7 @@ public:
     Texture *CreateTexture(const Surface &surface);
     void Clear() const;
     void Draw(Sprite &sprite) const;
+    void Draw(Text &text) const;
     void Present() const;
 
     View *GetView() { return &_view; }

@@ -28,3 +28,6 @@ endif(APPLE)
 
 add_executable(window ${CMAKE_CURRENT_SOURCE_DIR}/examples/window/Main.cpp)
 target_link_libraries(window SDLpp)
+
+add_executable(text ${CMAKE_CURRENT_SOURCE_DIR}/examples/text/Main.cpp)
+target_link_libraries(text SDLpp)

@@ -1,6 +1,7 @@
 #include "Renderer.h"
 #include "Sprite.h"
 #include "Surface.h"
+#include "Text.h"
 #include "Texture.h"
 #include "Vector2f.h"
 
@@ -18,6 +19,10 @@ void Renderer::Clear() const {
 
 void Renderer::Draw(Sprite &sprite) const {
     sprite.Draw(_view);
+}
+
+void Renderer::Draw(Text &text) const {
+    text.Draw(_ren, _view);
 }
 
 void Renderer::Present() const {

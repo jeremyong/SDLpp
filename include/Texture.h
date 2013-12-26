@@ -9,6 +9,7 @@ namespace sdl {
 class Sprite;
 class Texture {
     friend class Sprite;
+    friend class Text;
 private:
     SDL_Texture *_tex;
     SDL_Renderer *_ren;
