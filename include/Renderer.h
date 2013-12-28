@@ -34,6 +34,8 @@ public:
         if (_ren != nullptr) SDL_DestroyRenderer(_ren);
     }
 
+    Texture *CreateTexture(const int w, const int h);
+    Texture *CreateTexture(const int w, const int h, const int access);
     Texture *CreateTexture(const Surface &surface);
     Texture *CreateTexture(const std::string &file);
 
@@ -43,5 +45,7 @@ public:
     void Present() const;
 
     View *GetView() { return &_view; }
+private:
+    Texture *AddTexture(texture_ptr texture);
 };
 }

@@ -15,6 +15,20 @@ private:
     SDL_Texture *_tex;
     SDL_Renderer *_ren;
 public:
+    Texture(SDL_Renderer *ren, const int w, const int h)
+        : Texture(ren, w, h, SDL_TEXTUREACCESS_TARGET) {}
+
+    Texture(SDL_Renderer *ren, const int w, const int h, const int access)
+        : _tex(nullptr), _ren(ren) {
+        _tex = SDL_CreateTexture(ren, SDL_PIXELFORMAT_RGBA8888, access, w, h);
+        if (_tex == nullptr) {
+            Throw();
+        }
+        SDL_SetRenderTarget(_ren, _tex);
+        SDL_RenderClear(_ren);
+        SDL_SetRenderTarget(_ren, NULL);
+    }
+
     Texture(SDL_Renderer *ren, const std::string file)
         : _tex(nullptr), _ren(ren) {
         Surface s{file};
@@ -39,9 +53,12 @@ public:
         if (_tex != nullptr) SDL_DestroyTexture(_tex);
     }
 
+    void Draw(Sprite &sprite);
+
     int GetWidth() const;
+
     int GetHeight() const;
-    SDL_Renderer *GetRenderer() const;
+
     Vector2i GetSize() const;
 };
 }

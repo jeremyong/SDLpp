@@ -19,6 +19,7 @@ public:
         : Sprite(tex, src, Vector2f{0.f, 0.f}) {}
     Sprite(const Texture &tex, const Rect &src, const Vector2f &origin);
 
+    void Draw(Texture &texture);
     void Draw(const View &view);
 
     Vector2f GetPosition() const {

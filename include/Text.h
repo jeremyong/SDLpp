@@ -16,6 +16,7 @@ private:
     SDL_Texture *_texture;
     Rect _dest;
 public:
+    Text() {}
     Text(const Font &font, const std::string &text)
         : Text(font, text, Vector2f{0.f, 0.f}) {}
     Text(const Font &font, const std::string &text, const Vector2f &position)

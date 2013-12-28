@@ -6,18 +6,24 @@
 #include "Vector2f.h"
 
 namespace sdl {
+Texture *Renderer::CreateTexture(const int w, const int h) {
+    texture_ptr tmp{new Texture(_ren, w, h)};
+    return AddTexture(std::move(tmp));
+}
+
+Texture *Renderer::CreateTexture(const int w, const int h, const int access) {
+    texture_ptr tmp{new Texture(_ren, w, h, access)};
+    return AddTexture(std::move(tmp));
+}
+
 Texture *Renderer::CreateTexture(const std::string &file) {
     texture_ptr tmp{new Texture(_ren, file)};
-    std::set<texture_ptr>::iterator ret;
-    std::tie(ret, std::ignore) = _textures.insert(std::move(tmp));
-    return ret->get();
+    return AddTexture(std::move(tmp));
 }
 
 Texture *Renderer::CreateTexture(const Surface &surface) {
     texture_ptr tmp{new Texture(_ren, surface)};
-    std::set<texture_ptr>::iterator ret;
-    std::tie(ret, std::ignore) = _textures.insert(std::move(tmp));
-    return ret->get();
+    return AddTexture(std::move(tmp));
 }
 
 void Renderer::Clear() const {
@@ -34,5 +40,11 @@ void Renderer::Draw(Text &text) const {
 
 void Renderer::Present() const {
     SDL_RenderPresent(_ren);
+}
+
+Texture *Renderer::AddTexture(texture_ptr texture) {
+    std::set<texture_ptr>::iterator ret;
+    std::tie(ret, std::ignore) = _textures.insert(std::move(texture));
+    return ret->get();
 }
 }

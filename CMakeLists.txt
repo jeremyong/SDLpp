@@ -34,3 +34,6 @@ target_link_libraries(text SDLpp)
 
 add_executable(sprite ${CMAKE_CURRENT_SOURCE_DIR}/examples/sprite/Main.cpp)
 target_link_libraries(sprite SDLpp)
+
+add_executable(offscreen_drawing ${CMAKE_CURRENT_SOURCE_DIR}/examples/offscreen_drawing/Main.cpp)
+target_link_libraries(offscreen_drawing SDLpp)
