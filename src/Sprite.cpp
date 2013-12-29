@@ -22,15 +22,15 @@ Sprite::Sprite(const Texture &tex, const Rect &src, const Vector2f &origin)
 }
 
 void Sprite::Draw(Texture &texture) {
-    _dest.x = _position.x;
-    _dest.y = _position.y;
+    _dest.x = _position.x - _origin.x;
+    _dest.y = _position.y - _origin.y;
     SDL_RenderCopy(_texture._ren, _texture._tex, &_src, &_dest);
 }
 
 void Sprite::Draw(const View &view) {
     const Vector2i dest = view.WorldToRaster(_position);
-    _dest.x = dest.x;
-    _dest.y = dest.y;
+    _dest.x = dest.x - _origin.x;
+    _dest.y = dest.y - _origin.y;
     SDL_RenderCopy(_texture._ren, _texture._tex, &_src, &_dest);
 }
 }
