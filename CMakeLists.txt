@@ -37,3 +37,6 @@ target_link_libraries(sprite SDLpp)
 
 add_executable(offscreen_drawing ${CMAKE_CURRENT_SOURCE_DIR}/examples/offscreen_drawing/Main.cpp)
 target_link_libraries(offscreen_drawing SDLpp)
+
+add_executable(colors ${CMAKE_CURRENT_SOURCE_DIR}/examples/colors/Main.cpp)
+target_link_libraries(colors SDLpp)

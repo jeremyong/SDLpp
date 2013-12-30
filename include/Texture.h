@@ -8,6 +8,7 @@
 
 namespace sdl {
 class Sprite;
+class View;
 class Texture {
     friend class Sprite;
     friend class Text;
@@ -54,6 +55,7 @@ public:
     }
 
     void Draw(Sprite &sprite);
+    void Draw(Sprite &sprite, const View &view);
 
     int GetWidth() const;
 
