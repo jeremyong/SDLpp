@@ -31,6 +31,9 @@ public:
 
     void Draw(SDL_Renderer *renderer, const View &view);
 
+    Vector2f GetPosition() const { return _position; }
+    void SetPosition(Vector2f pos) { _position = pos; }
+
     ~Text() {
         if (_surface != nullptr) SDL_FreeSurface(_surface);
         if (_texture != nullptr) SDL_DestroyTexture(_texture);
