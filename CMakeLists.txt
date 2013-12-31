@@ -40,3 +40,6 @@ target_link_libraries(offscreen_drawing SDLpp)
 
 add_executable(colors ${CMAKE_CURRENT_SOURCE_DIR}/examples/colors/Main.cpp)
 target_link_libraries(colors SDLpp)
+
+add_executable(view ${CMAKE_CURRENT_SOURCE_DIR}/examples/view/Main.cpp)
+target_link_libraries(view SDLpp)

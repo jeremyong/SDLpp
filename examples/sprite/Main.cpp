@@ -2,7 +2,7 @@
 
 int main() {
     sdl::Init();
-    sdl::Window window{"Test window", 800, 600};
+    sdl::Window window{"Sprite Example", 800, 600};
     sdl::Renderer *renderer = window.CreateRenderer();
     renderer->Clear();
 
