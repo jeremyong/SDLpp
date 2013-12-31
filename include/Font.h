@@ -13,7 +13,7 @@ private:
 
 public:
     Font(std::string file, int pt_size)
-        : _file(file), _size(pt_size) {
+        : _font(nullptr), _file(file), _size(pt_size) {
         _font = TTF_OpenFont(file.c_str(), pt_size);
         if (_font == nullptr) Throw();
     }

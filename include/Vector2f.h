@@ -31,6 +31,27 @@ public:
         x *= length_inv;
         y *= length_inv;
     }
+
+    Vector2f operator/(const float k) const {
+        float k_inv = 1.f / k;
+        return Vector2f{x * k_inv, y * k_inv};
+    }
+
+    Vector2f operator+(const Vector2f &v) const {
+        return Vector2f{x + v.x, y + v.y};
+    }
+
+    Vector2f operator-(const Vector2f &v) const {
+        return Vector2f{x - v.x, y - v.y};
+    }
+
+    Vector2f operator-() const {
+        return Vector2f{-x, -y};
+    }
+
+    Vector2f operator*(const float k) const {
+        return Vector2f{x * k, y * k};
+    }
 };
 
 inline float Dot(const Vector2f &v1, const Vector2f &v2) {

@@ -6,7 +6,7 @@ void Text::Draw(SDL_Renderer *renderer, const View &view) {
     if (_texture == nullptr) {
         _texture = SDL_CreateTextureFromSurface(renderer, _surface);
         if (_texture == nullptr) {
-            throw SDL_GetError();
+            Throw();
         }
         SDL_QueryTexture(_texture, nullptr, nullptr, &_dest.w, &_dest.h);
     }

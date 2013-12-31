@@ -7,6 +7,7 @@
 #include "Clock.h"
 #include "Duration.h"
 #include "Font.h"
+#include "Mouse.h"
 #include "Renderer.h"
 #include "Sprite.h"
 #include "Surface.h"
@@ -18,13 +19,13 @@
 #include "Window.h"
 
 namespace sdl {
-void Quit() {
+inline void Quit() {
     IMG_Quit();
     TTF_Quit();
     SDL_Quit();
 }
 
-void Init() {
+inline void Init() {
     // Initialize sdl
     if (SDL_Init(SDL_INIT_EVERYTHING) != 0) {
         throw 0;

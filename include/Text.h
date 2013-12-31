@@ -16,7 +16,7 @@ private:
     SDL_Texture *_texture;
     Rect _dest;
 public:
-    Text() {}
+    Text() : _surface(nullptr), _texture(nullptr) {}
     Text(const Font &font, const std::string &text)
         : Text(font, text, Vector2f{0.f, 0.f}) {}
     Text(const Font &font, const std::string &text, const Vector2f &position)
@@ -25,7 +25,7 @@ public:
         : Text(font, text, Vector2f{0.f, 0.f}, color) {}
     Text(const Font &font, const std::string &text,
          const Vector2f &position, const Color &color)
-        : _text(text), _position(position), _texture(nullptr) {
+        : _text(text), _position(position), _surface(nullptr), _texture(nullptr) {
         _surface = TTF_RenderUTF8_Solid(font._font, text.c_str(), color.GetColor());
     }
 

@@ -45,6 +45,7 @@ public:
     void Present() const;
 
     View *GetView() { return &_view; }
+    void SetView(const View &view) { _view = view; }
 private:
     Texture *AddTexture(texture_ptr texture);
 };

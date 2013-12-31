@@ -4,8 +4,8 @@
 #include <iostream>
 
 namespace sdl {
-Sprite::Sprite(const Texture &tex)
-    : _texture(tex) {
+Sprite::Sprite(const Texture &tex, const Vector2f &origin)
+    : _texture(tex), _origin(origin) {
     Vector2i size = tex.GetSize();
     _dest.w = size.x;
     _dest.h = size.y;

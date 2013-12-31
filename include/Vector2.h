@@ -28,23 +28,23 @@ public:
         return *this;
     }
 
-    bool operator==(const Vector2<T> &v) {
+    bool operator==(const Vector2<T> &v) const {
         return (x == v.x && y == v.y);
     }
 
-    Vector2<T> operator+(const Vector2<T> &v) {
+    Vector2<T> operator+(const Vector2<T> &v) const {
         return Vector2<T>(x + v.x, y + v.y);
     }
 
-    Vector2<T> operator-(const Vector2<T> &v) {
+    Vector2<T> operator-(const Vector2<T> &v) const {
         return Vector2<T>(x - v.x, y - v.y);
     }
 
-    Vector2<T> operator-() {
+    Vector2<T> operator-() const {
         return Vector2<T>{-x, -y};
     }
 
-    Vector2<T> operator*(const T k) {
+    Vector2<T> operator*(const T k) const {
         return Vector2<T>{x * k, y * k};
     }
 

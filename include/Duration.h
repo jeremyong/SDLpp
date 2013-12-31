@@ -15,15 +15,15 @@ public:
 
     Duration(const std::chrono::steady_clock::duration &d) : _duration(d) {}
 
-    int GetMicroseconds() {
+    int GetMicroseconds() const {
         return std::chrono::duration_cast<microseconds>(_duration).count();
     }
 
-    int GetMilliseconds() {
+    int GetMilliseconds() const {
         return std::chrono::duration_cast<milliseconds>(_duration).count();
     }
 
-    int GetSeconds() {
+    int GetSeconds() const {
         return std::chrono::duration_cast<seconds>(_duration).count();
     }
 };
