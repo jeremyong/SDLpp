@@ -16,9 +16,8 @@ Sprite::Sprite(const Texture &tex, const Vector2f &origin)
 
 Sprite::Sprite(const Texture &tex, const Rect &src, const Vector2f &origin)
     : _texture(tex), _src(src), _origin(origin) {
-    Vector2i size = tex.GetSize();
-    _dest.w = size.x;
-    _dest.h = size.y;
+    _dest.w = src.w;
+    _dest.h = src.h;
 }
 
 void Sprite::SetTextureColor() {
