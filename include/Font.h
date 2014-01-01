@@ -12,6 +12,8 @@ private:
     int _size;
 
 public:
+    Font() : _font(nullptr) {}
+
     Font(std::string file, int pt_size)
         : _font(nullptr), _file(file), _size(pt_size) {
         _font = TTF_OpenFont(file.c_str(), pt_size);
@@ -20,6 +22,8 @@ public:
 
     Font(Font &&font) {
         _font = font._font;
+        _file = font._file;
+        _size = font._size;
         font._font = nullptr;
     }
     Font(const Font &font) {

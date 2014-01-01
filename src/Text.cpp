@@ -4,6 +4,7 @@
 namespace sdl {
 void Text::Draw(SDL_Renderer *renderer, const View &view) {
     if (_texture == nullptr) {
+        if (_surface == nullptr) return;
         _texture = SDL_CreateTextureFromSurface(renderer, _surface);
         if (_texture == nullptr) {
             Throw();

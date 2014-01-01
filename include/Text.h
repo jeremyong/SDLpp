@@ -29,6 +29,28 @@ public:
         _surface = TTF_RenderUTF8_Solid(font._font, text.c_str(), color.GetColor());
     }
 
+    Text(Text &&other)
+        : _text(other._text),
+          _surface(other._surface),
+          _texture(other._texture),
+          _dest(other._dest) {
+        other._surface = nullptr;
+        other._texture = nullptr;
+    }
+
+    Text(const Text &other) = delete;
+
+    Text operator=(Text &&other) {
+        Text ret;
+        ret._text = other._text;
+        ret._surface = other._surface;
+        ret._texture = other._texture;
+        ret._dest = other._dest;
+        other._surface = nullptr;
+        other._texture = nullptr;
+        return ret;
+    }
+
     void Draw(SDL_Renderer *renderer, const View &view);
 
     Vector2f GetPosition() const { return _position; }
