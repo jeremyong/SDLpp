@@ -50,6 +50,9 @@ public:
 
     Vector2i GetSize() const;
 
+    void GrabInput() { SDL_SetWindowGrab(_win, SDL_TRUE); }
+    void ReleaseInput() { SDL_SetWindowGrab(_win, SDL_FALSE); }
+
     Renderer *CreateRenderer();
     Renderer *CreateRenderer(const uint32_t flags);
 };
