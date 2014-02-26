@@ -1,6 +1,6 @@
 #include <SDLpp.h>
 
-int main() {
+int main(int argc, char *argv[]) {
     sdl::Init();
 
     // Makes a full screen window with desktop resolution
@@ -22,4 +22,5 @@ int main() {
     SDL_Delay(2000);
 
     // No need to call SDL_Quit, this is done automatically from sdl::Init()
+    return 0;
 }

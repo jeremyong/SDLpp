@@ -1,7 +1,7 @@
 #include <SDLpp.h>
 #include <string>
 
-int main() {
+int main(int argc, char *argv[]) {
     sdl::Init();
 
     sdl::Window window{"Test window", 800, 600};
@@ -20,4 +20,5 @@ int main() {
 
     renderer->Present();
     SDL_Delay(2000);
+    return 0;
 }
