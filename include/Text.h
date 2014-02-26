@@ -4,7 +4,7 @@
 #include "Vector2f.h"
 #include "Util.h"
 #include <string>
-#include <SDL2/SDL.h>
+#include "SDL.h"
 
 namespace sdl {
 class View;

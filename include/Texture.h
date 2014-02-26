@@ -1,5 +1,5 @@
 #pragma once
-#include <SDL2/SDL.h>
+#include "SDL.h"
 #include "Surface.h"
 #include "Vector2.h"
 #include "Util.h"
