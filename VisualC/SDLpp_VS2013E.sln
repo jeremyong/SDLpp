@@ -5,6 +5,11 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDLpp", "SDLpp\SDLpp_VS2013E.vcxproj", "{2CA330BE-DA51-4BE4-8994-6D19167490C9}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Window example", "examples\window\window_VS2013E.vcxproj", "{4F78FBD2-16EF-47FC-A52A-CE4245EF3373}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2CA330BE-DA51-4BE4-8994-6D19167490C9} = {2CA330BE-DA51-4BE4-8994-6D19167490C9}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -15,6 +20,10 @@ Global
 		{2CA330BE-DA51-4BE4-8994-6D19167490C9}.Debug|Win32.Build.0 = Debug|Win32
 		{2CA330BE-DA51-4BE4-8994-6D19167490C9}.Release|Win32.ActiveCfg = Release|Win32
 		{2CA330BE-DA51-4BE4-8994-6D19167490C9}.Release|Win32.Build.0 = Release|Win32
+		{4F78FBD2-16EF-47FC-A52A-CE4245EF3373}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4F78FBD2-16EF-47FC-A52A-CE4245EF3373}.Debug|Win32.Build.0 = Debug|Win32
+		{4F78FBD2-16EF-47FC-A52A-CE4245EF3373}.Release|Win32.ActiveCfg = Release|Win32
+		{4F78FBD2-16EF-47FC-A52A-CE4245EF3373}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
