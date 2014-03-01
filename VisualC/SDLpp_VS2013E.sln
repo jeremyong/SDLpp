@@ -19,6 +19,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Text example", "examples\te
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sprite example", "examples\sprite\sprite_VS2013E.vcxproj", "{DF648EEA-9555-4761-A16D-4B667BF1AEBA}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Offscreen drawing example", "examples\offscreen_drawing\offscreen_drawing_VS2013E.vcxproj", "{24231F3D-3E45-404F-9FB6-2883EC91E540}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -45,6 +47,10 @@ Global
 		{DF648EEA-9555-4761-A16D-4B667BF1AEBA}.Debug|Win32.Build.0 = Debug|Win32
 		{DF648EEA-9555-4761-A16D-4B667BF1AEBA}.Release|Win32.ActiveCfg = Release|Win32
 		{DF648EEA-9555-4761-A16D-4B667BF1AEBA}.Release|Win32.Build.0 = Release|Win32
+		{24231F3D-3E45-404F-9FB6-2883EC91E540}.Debug|Win32.ActiveCfg = Debug|Win32
+		{24231F3D-3E45-404F-9FB6-2883EC91E540}.Debug|Win32.Build.0 = Debug|Win32
+		{24231F3D-3E45-404F-9FB6-2883EC91E540}.Release|Win32.ActiveCfg = Release|Win32
+		{24231F3D-3E45-404F-9FB6-2883EC91E540}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
