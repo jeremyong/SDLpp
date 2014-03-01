@@ -15,6 +15,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "View example", "examples\vi
 		{2CA330BE-DA51-4BE4-8994-6D19167490C9} = {2CA330BE-DA51-4BE4-8994-6D19167490C9}
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Text example", "examples\text\text_VS2013E.vcxproj", "{09F8F495-9BC9-428F-A9BA-67D769917BC1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -33,6 +35,10 @@ Global
 		{838557CA-0166-4326-9D17-537323DAA062}.Debug|Win32.Build.0 = Debug|Win32
 		{838557CA-0166-4326-9D17-537323DAA062}.Release|Win32.ActiveCfg = Release|Win32
 		{838557CA-0166-4326-9D17-537323DAA062}.Release|Win32.Build.0 = Release|Win32
+		{09F8F495-9BC9-428F-A9BA-67D769917BC1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{09F8F495-9BC9-428F-A9BA-67D769917BC1}.Debug|Win32.Build.0 = Debug|Win32
+		{09F8F495-9BC9-428F-A9BA-67D769917BC1}.Release|Win32.ActiveCfg = Release|Win32
+		{09F8F495-9BC9-428F-A9BA-67D769917BC1}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
