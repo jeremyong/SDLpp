@@ -40,7 +40,7 @@ public:
 
     Text(const Text &other) = delete;
 
-    Text& operator=(Text &other) = delete;
+    Text& operator=(const Text &other) = delete;
 
     void Draw(SDL_Renderer *renderer, const View &view);
 
