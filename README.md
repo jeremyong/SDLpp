@@ -30,6 +30,12 @@ link against. Remember to add the `include` directory as well. In
 addition, this will build all the examples in the `examples`
 directory.
 
+Alternatively, if you're a windows user, you can build with
+visual studio by building the solution under the 'VisualC' directory.
+This will create an 'SDLpp.lib' library that your application can
+link against. Remember to add the 'include' directory as well.
+In addition, this will build all examples in the 'examples' directory.
+
 ## Usage
 
 Please refer to individual examples in the `examples` directory for

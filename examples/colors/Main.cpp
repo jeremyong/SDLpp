@@ -1,6 +1,6 @@
 #include <SDLpp.h>
 
-int main() {
+int main(int argc, char *argv[]) {
     sdl::Init();
     sdl::Window window{"Test window", 800, 600};
     sdl::Renderer *renderer = window.CreateRenderer();
@@ -28,4 +28,5 @@ int main() {
 
     renderer->Present();
     SDL_Delay(2000);
+    return 0;
 }

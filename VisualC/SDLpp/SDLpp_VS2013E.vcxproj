@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{2CA330BE-DA51-4BE4-8994-6D19167490C9}</ProjectGuid>
+    <RootNamespace>SDLpp_VS2013E</RootNamespace>
+    <ProjectName>SDLpp</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>SDLpp</TargetName>
+    <OutDir>$(SolutionDir)..\build\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\..\include\;..\..\..\SDL2\include\;..\..\..\SDL2_image\include\;..\..\..\SDL2_ttf\include\</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalDependencies>SDL2main.lib;SDL2.lib;SDL2_image.lib;SDL2_ttf.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\SDL2\lib\;..\..\..\SDL2_image\lib\;..\..\..\SDL2_ttf\lib\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\Clock.h" />
+    <ClInclude Include="..\..\include\Color.h" />
+    <ClInclude Include="..\..\include\Duration.h" />
+    <ClInclude Include="..\..\include\Font.h" />
+    <ClInclude Include="..\..\include\Mouse.h" />
+    <ClInclude Include="..\..\include\Renderer.h" />
+    <ClInclude Include="..\..\include\SDLpp.h" />
+    <ClInclude Include="..\..\include\Sprite.h" />
+    <ClInclude Include="..\..\include\Surface.h" />
+    <ClInclude Include="..\..\include\Text.h" />
+    <ClInclude Include="..\..\include\Texture.h" />
+    <ClInclude Include="..\..\include\Util.h" />
+    <ClInclude Include="..\..\include\Vector2.h" />
+    <ClInclude Include="..\..\include\Vector2f.h" />
+    <ClInclude Include="..\..\include\View.h" />
+    <ClInclude Include="..\..\include\Window.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\Clock.cpp" />
+    <ClCompile Include="..\..\src\Renderer.cpp" />
+    <ClCompile Include="..\..\src\Sprite.cpp" />
+    <ClCompile Include="..\..\src\Text.cpp" />
+    <ClCompile Include="..\..\src\Texture.cpp" />
+    <ClCompile Include="..\..\src\View.cpp" />
+    <ClCompile Include="..\..\src\Window.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
