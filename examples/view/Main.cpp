@@ -1,7 +1,7 @@
 #include <SDLpp.h>
 
 int main() {
-    sdl::Init();
+    sdl::Context ctx;
     sdl::Window window{"View Example", 800, 600};
     sdl::Renderer *renderer = window.CreateRenderer();
 

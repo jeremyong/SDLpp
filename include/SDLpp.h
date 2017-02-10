@@ -19,30 +19,38 @@
 #include "Window.h"
 
 namespace sdl {
-inline void Quit() {
-    IMG_Quit();
-    TTF_Quit();
-    SDL_Quit();
-}
 
-inline void Init() {
-    // Initialize sdl
-    if (SDL_Init(SDL_INIT_EVERYTHING) != 0) {
-        throw 0;
-    }
+  class Context
+  {
+  public:
+      Context(const Context&) = delete;
+      Context& operator = (const Context&) = delete;
 
-    // Initialize sdl_ttf
-    if (TTF_Init() == -1) {
-        throw 1;
-    }
+      Context() {
+          // Initialize sdl
+          if (SDL_Init(SDL_INIT_EVERYTHING) != 0) {
+              throw 0;
+          }
 
-    // Initialize sdl_image
-    const int image_flags = IMG_INIT_JPG | IMG_INIT_PNG | IMG_INIT_TIF;
-    const int initialized_flags = IMG_Init(image_flags);
-    if ((initialized_flags & image_flags) != image_flags) {
-        throw 2;
-    }
+          // Initialize sdl_ttf
+          if (TTF_Init() == -1) {
+              throw 1;
+          }
 
-    atexit(Quit);
-}
+          // Initialize sdl_image
+          const int image_flags = IMG_INIT_JPG | IMG_INIT_PNG | IMG_INIT_TIF;
+          const int initialized_flags = IMG_Init(image_flags);
+          if ((initialized_flags & image_flags) != image_flags) {
+              throw 2;
+          }
+      }
+
+      ~Context() {
+          IMG_Quit();
+          TTF_Quit();
+          SDL_Quit();
+      }
+
+  };
+
 }
