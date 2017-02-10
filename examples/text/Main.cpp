@@ -2,7 +2,7 @@
 #include <string>
 
 int main() {
-    sdl::Init();
+    sdl::Context c;
 
     sdl::Window window{"Test window", 800, 600};
     sdl::Renderer *renderer = window.CreateRenderer();

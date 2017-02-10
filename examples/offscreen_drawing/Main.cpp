@@ -1,7 +1,7 @@
 #include <SDLpp.h>
 
 int main() {
-    sdl::Init();
+    sdl::Context c;
     sdl::Window window{"Offscreen Drawing", 800, 600};
     sdl::Renderer *renderer = window.CreateRenderer();
     renderer->Clear();

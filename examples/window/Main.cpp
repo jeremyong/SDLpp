@@ -1,7 +1,7 @@
 #include <SDLpp.h>
 
 int main() {
-    sdl::Init();
+    sdl::Context c;
 
     // Makes a full screen window with desktop resolution
     //sdl::Window window{"Test window"};
@@ -21,5 +21,5 @@ int main() {
     // 2 second pause
     SDL_Delay(2000);
 
-    // No need to call SDL_Quit, this is done automatically from sdl::Init()
+    // No need to call SDL_Quit, this is done automatically from sdl::Context's destructor
 }
